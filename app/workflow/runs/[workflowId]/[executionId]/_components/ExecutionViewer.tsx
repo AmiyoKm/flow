@@ -80,7 +80,12 @@ const ExecutionViewer = ({ initialData }: { initialData: ExecutionData }) => {
       <aside className="w-[440px] min-w-[440px] max-w-[440px] border-r-2 border-separate flex flex-grow flex-col overflow-hidden">
         <div className="py-4 px-2">
           <ExecutionLabel
-            value={query.data?.status}
+            value={<>
+            
+            <div className="font-semibold capitalize flex gap-2 items-center">
+              <PhaseStatusBadge status={query.data?.status as ExecutionPhaseStatus} />
+              <span>{query.data?.status}</span>
+              </div></>}
             label="Status"
             icon={CircleDashedIcon}
           />
