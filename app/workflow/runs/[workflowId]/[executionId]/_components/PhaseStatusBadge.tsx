@@ -1,5 +1,5 @@
 import { ExecutionPhaseStatus } from "@/types/workflow";
-import { CircleDashedIcon, CircleXIcon, Loader2Icon } from "lucide-react";
+import {  Check , CircleDashedIcon, CircleXIcon, Loader2Icon } from "lucide-react";
 
 export default function PhaseStatusBadge({status}:{status : ExecutionPhaseStatus}){
     switch (status) {
@@ -10,7 +10,7 @@ export default function PhaseStatusBadge({status}:{status : ExecutionPhaseStatus
         case ExecutionPhaseStatus.FAILED : 
         return <CircleXIcon size={20} className="stroke-destructive" />
         case ExecutionPhaseStatus.COMPLETED : 
-        return <CircleDashedIcon size={20} className="stroke-green-500" />
+        return <Check size={20} className="stroke-green-500" />
         default : 
         return <div className="rounded-full">{status}</div>
         
