@@ -11,6 +11,11 @@ type Stat =  Record<string , {
     success : number,
     failed : number
 }>
+type Infos = {
+    success: number;
+    failed: number;
+  };
+  
 export async function GetWorkflowExecutionStats(period:Period) {
     const {userId} = await auth()
     if(!userId){
@@ -48,7 +53,7 @@ export async function GetWorkflowExecutionStats(period:Period) {
             stats[date].failed += 1 
         }
     })
-    const result = Object.entries(stats).map(([date , infos])=> 
+    const result = Object.entries(stats).map(([date  , infos]: [string ,Infos ])=> 
     {
         return { date , ...infos}
     }

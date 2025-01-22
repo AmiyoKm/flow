@@ -5,6 +5,12 @@ import { Period } from "@/types/analytics";
 import { WorkflowExecutionStatus } from "@/types/workflow";
 import { auth } from "@clerk/nextjs/server";
 
+type Execution = {
+    creditsConsumed: number;
+    phases: {
+      creditsConsumed: number | null;
+    }[];
+  };
 
 export async function GetStatsCardsValues(period : Period ){
     const {userId} = await auth()
@@ -44,7 +50,7 @@ export async function GetStatsCardsValues(period : Period ){
         creditsConsumed : 0,
         phaseExecutions : 0
     }
-    stats.creditsConsumed = executions.reduce((acc : number , execution)=>acc+execution.creditsConsumed ,0)
-    stats.phaseExecutions = executions.reduce((acc : number , execution)=>acc+execution.phases.length ,0)
+    stats.creditsConsumed = executions.reduce((acc : number , execution : Execution )=>acc+execution.creditsConsumed ,0)
+    stats.phaseExecutions = executions.reduce((acc : number , execution : Execution)=>acc+execution.phases.length ,0)
     return stats
 }
