@@ -17,9 +17,11 @@ import { Credential } from '@/prisma/generated/client'
 const CredentialParam = ({param , updateNodeParamValue , value}:ParamProps) => {
   const query = useQuery({
     queryKey :["credentials"],
-    queryFn : GetCredentialsForUser,
+    queryFn : ()=> GetCredentialsForUser(),
     refetchInterval : 10000
   })
+  console.log(query.data);
+  
   const id = useId()
   return (
     <div className='flex flex-col gap-1 w-full'>

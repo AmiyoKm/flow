@@ -9,7 +9,6 @@ import { WorkflowStatus } from '@/types/workflow'
 const Editor = ({workflow}:{workflow: Workflow}) => {
   return (
     <FlowValidationContextProvider>
-
     <ReactFlowProvider>
         <div className='flex flex-col h-full w-full overflow-hidden ' >
           <Topbar workflowId={workflow.id} title='Workflow editor' subtitle={workflow.name} isPublished={workflow.status===WorkflowStatus.PUBLISHED} />
