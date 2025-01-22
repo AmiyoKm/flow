@@ -9,7 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import { DatesToDurationString } from "@/lib/helper/dates";
 import { GetPhasesTotalCost } from "@/lib/helper/phases";
 import { ExecutionPhaseStatus, WorkflowExecutionStatus } from "@/types/workflow";
-import { ExecutionLog } from "@prisma/client";
+import { ExecutionLog } from "@/prisma/generated/client";
 import { useQuery } from "@tanstack/react-query";
 import { formatDistanceToNow } from "date-fns";
 import {
