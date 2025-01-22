@@ -1,4 +1,4 @@
-import { Workflow } from '@prisma/client'
+import { Workflow } from '@/prisma/generated/client'
 import React from 'react'
 import {ReactFlowProvider} from "@xyflow/react"
 import FlowEditor from './FlowEditor'
