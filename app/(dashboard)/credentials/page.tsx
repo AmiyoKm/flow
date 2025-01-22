@@ -3,7 +3,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { LockKeyholeIcon, ShieldIcon, ShieldOffIcon } from "lucide-react";
-import React, { Suspense, useState } from "react";
+import React, { Suspense } from "react";
 import CreateCredentialDialog from "./_components/CreateCredentialDialog";
 import { formatDistanceToNow } from "date-fns";
 import DeleteCredentialDialog from "./_components/DeleteCredentialDialog";

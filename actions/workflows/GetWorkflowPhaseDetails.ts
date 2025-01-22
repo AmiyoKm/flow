@@ -2,7 +2,6 @@
 
 import { prisma } from "@/lib/prisma"
 import { auth } from "@clerk/nextjs/server"
-import { timeStamp } from "console"
 
 export async function GetWorkflowPhaseDetails(phaseId: string | null) {
     const {userId} = await auth()

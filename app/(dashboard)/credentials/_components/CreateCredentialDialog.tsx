@@ -3,7 +3,7 @@ import CustomDialogHeader from "@/components/CustomDialogHeader";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { DialogContent } from "../../../../components/ui/dialog";
-import { Layers2Icon, Loader2, ShieldEllipsis } from "lucide-react";
+import {  Loader2, ShieldEllipsis } from "lucide-react";
 import React, { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -19,7 +19,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useMutation } from "@tanstack/react-query";
-import { CreateWorkflow } from "@/actions/workflows/createWorkflow";
 import { toast } from "sonner";
 import { createCredentialSchema, createCredentialSchemaType } from "@/schema/credential";
 import { CreateCredential } from "@/actions/credentials/CreateCredential";

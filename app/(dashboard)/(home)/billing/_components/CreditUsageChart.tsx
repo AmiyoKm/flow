@@ -5,13 +5,12 @@ import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
-import {  ChartColumnStackedIcon, Layers2 } from 'lucide-react'
+import {  ChartColumnStackedIcon } from 'lucide-react'
 import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
-import { Area, AreaChart, Bar, BarChart, CartesianGrid, XAxis } from 'recharts'
+import {  Bar, BarChart, CartesianGrid, XAxis } from 'recharts'
 import { GetCreditsUsageInPeriod } from '@/actions/analytics/GetCreditsUsageInPeriod'
   
 type ChartData = Awaited<ReturnType <typeof GetCreditsUsageInPeriod>>
