@@ -40,7 +40,7 @@ export async function GetCreditsUsageInPeriod(period:Period) {
             failed : 0
         }
         return acc
-    },{} as any)
+    },{} as Stat )
     executionPhases.forEach((phase)=> {
         const date = format(phase.startedAt! , dateFormat)
         if(phase.status === ExecutionPhaseStatus.COMPLETED){
