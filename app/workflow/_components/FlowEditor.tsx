@@ -1,5 +1,5 @@
 "use client"
-import { Workflow } from '@prisma/client'
+import { Workflow } from '@/prisma/generated/client'
 import { addEdge, Background, BackgroundVariant, Connection, Controls, Edge, getOutgoers, ReactFlow, useEdgesState, useNodesState, useReactFlow  } from '@xyflow/react'
 import React, { useCallback, useEffect } from 'react'
 import "@xyflow/react/dist/style.css"
