@@ -44,7 +44,7 @@ export async function GetStatsCardsValues(period : Period ){
         creditsConsumed : 0,
         phaseExecutions : 0
     }
-    stats.creditsConsumed = executions.reduce((acc , execution)=>acc+execution.creditsConsumed ,0)
-    stats.phaseExecutions = executions.reduce((acc , execution)=>acc+execution.phases.length ,0)
+    stats.creditsConsumed = executions.reduce((acc : number , execution)=>acc+execution.creditsConsumed ,0)
+    stats.phaseExecutions = executions.reduce((acc : number , execution)=>acc+execution.phases.length ,0)
     return stats
 }

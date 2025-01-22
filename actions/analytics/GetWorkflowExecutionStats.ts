@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { Period } from "@/types/analytics";
 import { WorkflowExecutionStatus } from "@/types/workflow";
 import { auth } from "@clerk/nextjs/server";
+import { WorkflowExecution } from "@prisma/client";
 import { eachDayOfInterval, format } from "date-fns";
 type Stat =  Record<string , {
     success : number,
@@ -37,8 +38,8 @@ export async function GetWorkflowExecutionStats(period:Period) {
             failed : 0
         }
         return acc
-    },{} as any)
-    executions.forEach((execution)=> {
+    },{} as Stat)
+    executions.forEach((execution : WorkflowExecution)=> {
         const date = format(execution.startedAt! , dateFormat)
         if(execution.status === WorkflowExecutionStatus.COMPLETED){
             stats[date].success += 1 
