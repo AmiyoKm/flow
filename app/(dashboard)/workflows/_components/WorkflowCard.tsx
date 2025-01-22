@@ -4,7 +4,7 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { WorkflowExecutionStatus, WorkflowStatus } from "@/types/workflow";
-import { Workflow } from "@prisma/client";
+import { Workflow } from "@/prisma/generated/client";
 import {formatInTimeZone} from "date-fns-tz"
 import {
   ChevronRightIcon,
