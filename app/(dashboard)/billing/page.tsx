@@ -9,6 +9,7 @@ import { GetCreditsUsageInPeriod } from "@/actions/analytics/GetCreditsUsageInPe
 import CreditUsageChart from "../(home)/billing/_components/CreditUsageChart";
 import { GetUserPurchaseHistory } from "@/actions/billing/GetUserPurchaseHistory";
 import InvoiceBtn from "./_components/InvoiceBtn";
+import { UserPurchase } from "@/prisma/generated/client";
 
 export default function BillingPage() {
   return (
@@ -87,7 +88,7 @@ async function TransactionHistoryCard(){
           )
         }
         {
-          purchase.map((p)=>(
+          purchase.map((p :UserPurchase )=>(
             <div key={p.id} className="flex justify-between items-center py-3 border-b last:border-b-0">
               <div>
                 <p className="font-medium">{formatDate(p.date)}</p>
