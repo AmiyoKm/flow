@@ -1,4 +1,4 @@
-import { ExecutionPhase } from "@prisma/client";
+import { ExecutionPhase } from "@/prisma/generated/client";
 
 type Phase = Pick<ExecutionPhase , "creditsConsumed">
 export function GetPhasesTotalCost(phases : Phase[]){
