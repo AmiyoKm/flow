@@ -3,12 +3,12 @@
 
 generator client {
   provider = "prisma-client-js"
-   output   = "./generated/client"
+  output   = "./generated/client"
 }
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url      = "file:./database.db"
 }
 
 model Workflow {
