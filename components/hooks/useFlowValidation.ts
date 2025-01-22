@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FlowValidationContext } from "../context/FlowValidationCOntext";
+import { FlowValidationContext } from "../context/FlowValidationContext";
 
 export default function useFlowValidation(){
     const context = useContext(FlowValidationContext)
