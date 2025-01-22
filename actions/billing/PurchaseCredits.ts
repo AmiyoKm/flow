@@ -27,8 +27,8 @@ export async function PurchaseCredits(packId : PackId){
         cancel_url: getAppUrl("billing"),
         metadata : {
             userId,
-            packId,
-            priceId
+            packId
+            
         },
         line_items : [
             {
