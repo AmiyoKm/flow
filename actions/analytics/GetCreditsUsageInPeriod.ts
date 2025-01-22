@@ -4,7 +4,7 @@ import { PeriodToDateRange } from "@/lib/helper/dates";
 import { prisma } from "@/lib/prisma";
 import { ExecutionPhase } from "@/prisma/generated/client";
 import { Period } from "@/types/analytics";
-import { ExecutionPhaseStatus, WorkflowExecutionStatus } from "@/types/workflow";
+import { ExecutionPhaseStatus } from "@/types/workflow";
 import { auth } from "@clerk/nextjs/server";
 import { eachDayOfInterval, format } from "date-fns";
 type Stat =  Record<string , {

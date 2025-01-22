@@ -5,7 +5,8 @@ import { prisma } from "@/lib/prisma";
 import { Period } from "@/types/analytics";
 import { WorkflowExecutionStatus } from "@/types/workflow";
 import { auth } from "@clerk/nextjs/server";
-import { WorkflowExecution } from "@prisma/client";
+import { WorkflowExecution } from "@/prisma/generated/client";
+
 import { eachDayOfInterval, format } from "date-fns";
 type Stat =  Record<string , {
     success : number,
