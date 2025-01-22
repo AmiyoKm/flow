@@ -12,11 +12,12 @@ import {
 import { Label } from '@/components/ui/label'
 import { useQuery } from '@tanstack/react-query'
 import { GetCredentialsForUser } from '@/actions/credentials/GetCredentialsForUser'
+import { Credential } from '@/prisma/generated/client'
 
 const CredentialParam = ({param , updateNodeParamValue , value}:ParamProps) => {
   const query = useQuery({
     queryKey :["credentials"],
-    queryFn : ()=> GetCredentialsForUser(),
+    queryFn : GetCredentialsForUser,
     refetchInterval : 10000
   })
   const id = useId()
@@ -33,7 +34,7 @@ const CredentialParam = ({param , updateNodeParamValue , value}:ParamProps) => {
   <SelectContent>
     <SelectGroup>
       <SelectLabel>Credentials</SelectLabel>
-        {query.data?.map((credential)=>(
+        {query.data?.map((credential :Credential )=>(
           <SelectItem key={credential.id} value={credential.id}>{credential.name}</SelectItem>
         ))}
     </SelectGroup>
