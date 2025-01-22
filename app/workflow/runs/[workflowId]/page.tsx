@@ -28,7 +28,7 @@ const ExecutionPage = ({ params }: { params: { workflowId: string } }) => {
   );
 };
 
-export async function ExecutionsTableWrapper({ workflowId }: { workflowId: string }) {
+ async function ExecutionsTableWrapper({ workflowId }: { workflowId: string }) {
   const executions = await GetWorkflowExecutions(workflowId);
   if (!executions) {
     return <div>No data</div>;
